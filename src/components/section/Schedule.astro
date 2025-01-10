@@ -1,0 +1,39 @@
+---
+import CountDownTimer from "@/components/feature/CountDownTimer"
+---
+<section class="py-10 bg-gray-100">
+  <h2 class="text-3xl font-bold text-center mb-6">Lịch trình và Địa điểm</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+    <!-- Nhà trai -->
+    <div class="p-6 bg-white shadow rounded">
+      <h3 class="text-2xl font-bold mb-4">Nhà Trai</h3>
+      <p>Hôn lễ tổ chức tại:</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59587.946389584555!2d105.79567821549968!3d21.022814738509624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2sHanoi%2C%20Vietnam!5e0!3m2!1sen!2s!4v1736346587235!5m2!1sen!2s"
+        class="w-full h-64 my-4 rounded"
+        style="border:0;"
+        allowfullscreen="false"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Thời gian: 15/01/2025 - 9:00 AM</p>
+      <CountDownTimer date="2025-01-15T09:00:00" client:only="react"/>
+      <div id="countdown-groom" class="mt-2 text-red-500 font-bold"></div>
+    </div>
+
+    <!-- Nhà gái -->
+    <div class="p-6 bg-white shadow rounded">
+      <h3 class="text-2xl font-bold mb-4">Nhà Gái</h3>
+      <p>Hôn lễ tổ chức tại:</p>
+      <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59587.946389584555!2d105.79567821549968!3d21.022814738509624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9bd9861ca1%3A0xe7887f7b72ca17a9!2sHanoi%2C%20Vietnam!5e0!3m2!1sen!2s!4v1736346587235!5m2!1sen!2s"
+      class="w-full h-64 my-4 rounded"
+      style="border:0;"
+      allowfullscreen="false"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p>Thời gian: 15/01/2025 - 11:00 AM</p>
+      <CountDownTimer date="2025-01-15T09:00:00" client:only="react"/>
+      <div id="countdown-bride" class="mt-2 text-red-500 font-bold"></div>
+    </div>
+  </div>
+</section>

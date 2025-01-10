@@ -1,0 +1,15 @@
+---
+import CountDownTimer from "./feature/CountDownTimer.jsx";
+import FamilyIntroduction from '@/components/section/FamilyIntroduction'
+import Hero from "./section/Hero.astro";
+import TimeLine from "@/components/section/TimeLine";
+import Gift from "@/components/section/Gift.astro";
+import MasonryGallery from "@/components/section/MasonryGallery";
+import Schedule from "@/components/section/Schedule.astro";
+---
+<Hero />
+<FamilyIntroduction />
+<Schedule />
+<TimeLine client:only="react" />
+<MasonryGallery />
+<Gift />
