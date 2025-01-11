@@ -1,7 +1,12 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 function MasonryGallery() {
+  const sectionGalleryRef = useRef<HTMLElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
   
   const images = Array(6).fill({
@@ -11,37 +16,43 @@ function MasonryGallery() {
   });
 
   useEffect(() => {
-    if (galleryRef.current) {
+    if (galleryRef.current && sectionGalleryRef.current) {
       const imageElements = galleryRef.current.querySelectorAll('.image-item');
       
-      gsap.fromTo(
+      console.log(imageElements);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionGalleryRef.current,
+          start: "top center", 
+          toggleActions: "play none none none", 
+          markers: true, 
+        }
+      });
+
+      tl.fromTo(
         imageElements,
-        {
-          opacity: 0,
-          y: 50,
+        { 
+          opacity: 0, 
+          y: 20 
         },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.1,
+          duration: 0.6,
+          stagger: 0.2,
           ease: "power2.out",
-          scrollTrigger: {
-            trigger: galleryRef.current,
-            start: "top center+=100",
-            toggleActions: "play none none none",
-          },
         }
       );
-    }
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
+      return () => {
+        tl.kill();
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      };
+    }
   }, []);
 
   return (
-    <section className="py-10 bg-gray-100">
+    <section ref={sectionGalleryRef} className="py-10 bg-gray-100">
       <h2 className="text-3xl font-bold text-center mb-6">Album Hôn Lễ</h2>
       <div 
         ref={galleryRef}

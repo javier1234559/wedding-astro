@@ -1,8 +1,17 @@
 ---
-import Main from '../components/Main.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import TimeLine from "@/components/section/TimeLine";
+import Gift from "@/components/section/Gift.astro";
+import MasonryGallery from "@/components/section/MasonryGallery";
+import Schedule from "@/components/section/Schedule.astro";
+import Hero from "@/components/section/Hero.astro";
+import FamilyIntroduction from "@/components/section/FamilyIntroduction.astro";
 ---
-
 <Layout>
-	<Main />
+  <Hero />
+  <FamilyIntroduction />
+  <Schedule />
+  <TimeLine client:only="react" />
+  <MasonryGallery client:only="react"/>
+  <Gift />
 </Layout>

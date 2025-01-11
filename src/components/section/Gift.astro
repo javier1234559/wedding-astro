@@ -1,16 +1,25 @@
+---
+import { Image } from "astro:assets"
+---
+
+
 <section class="py-10 text-center">
   <h2 class="text-3xl font-bold mb-6">Gift</h2>
   <p>Quét mã QR để gửi quà chúc phúc:</p>
   <div class="flex justify-center items-center gap-6 mt-6">
-    <img
+    <Image
       src="https://via.placeholder.com/150"
-      class="w-32 h-32 rounded shadow"
+      class:list="w-32 h-32 rounded shadow"
       alt="QR Code Groom"
+      width={150}
+      height={150}
     />
-    <img
+    <Image
       src="https://via.placeholder.com/150"
-      class="w-32 h-32 rounded shadow"
+      class:list="w-32 h-32 rounded shadow"
       alt="QR Code Bride"
+      width={150}
+      height={150}
     />
   </div>
 </section>

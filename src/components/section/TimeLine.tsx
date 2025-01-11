@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Users, Church, UtensilsCrossed } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -55,13 +56,12 @@ function TimeLine() {
     if (timelineRef.current && sectionRef.current) {
       const items = timelineRef.current.querySelectorAll("li");
       
-      // Create timeline animation
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top center", // Animation starts when top of section hits center of viewport
-          toggleActions: "play none none none", // Play animation once when entering
-          markers: true, // Remove this in production
+          start: "top center", 
+          toggleActions: "play none none none", 
+          markers: true, 
         }
       });
 
@@ -80,7 +80,6 @@ function TimeLine() {
         }
       );
 
-      // Cleanup
       return () => {
         tl.kill();
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
