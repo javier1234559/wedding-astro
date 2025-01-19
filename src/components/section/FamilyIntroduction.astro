@@ -1,42 +1,37 @@
 ---
-import IntroductionCard from './IntroductionCard';
+import IntroductionCard from "./IntroductionCard";
 
 const introductions = [
   {
     id: 1,
-    type: 'Đàng Trai',
-    name: 'Anh Tuấn',
-    description: 'Chú rể với nụ cười ấm áp và trái tim chân thành.',
-    images: [
-      'https://images.prismic.io/lf-web/ZtsgSxoQrfVKlzFP_banh-nua-entremet.jpg',
-      'https://images.prismic.io/lf-web/Zt6G-RoQrfVKl1Zv_LF_About_02.jpg',
-      'https://images.prismic.io/lf-web/Zt6G-BoQrfVKl1Zu_LF_About_01.jpg',
-    ],
+    type: "Đàng Trai",
+    name: "Anh Tuấn",
+    description: "Chú rể với nụ cười ấm áp và trái tim chân thành.",
+    images: ["/image4.jpeg", "/image2.jpeg", "/image3.jpeg"],
   },
   {
     id: 2,
-    type: 'Đàng Gái',
-    name: 'Thu Hương',
-    description: 'Cô dâu xinh đẹp với nụ cười rạng ngời.',
-    images: [
-      'https://images.prismic.io/lf-web/ZtsgSxoQrfVKlzFP_banh-nua-entremet.jpg',
-      'https://images.prismic.io/lf-web/Zt6G-RoQrfVKl1Zv_LF_About_02.jpg',
-      'https://images.prismic.io/lf-web/Zt6G-BoQrfVKl1Zu_LF_About_01.jpg',
-    ],
+    type: "Đàng Gái",
+    name: "Thu Hương",
+    description: "Cô dâu xinh đẹp với nụ cười rạng ngời.",
+    images: ["/image4.jpeg", "/image2.jpeg", "/image3.jpeg"],
   },
 ];
 ---
+
 <section class="py-10 text-center">
   <h2 class="text-3xl font-bold mb-6">Giới thiệu Đàng Trai & Đàng Gái</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-    {introductions.map((intro) => (
-      <IntroductionCard
-      client:only
-      type={intro.type}
-        name={intro.name}
-        description={intro.description}
-        images={intro.images}
-      />
-    ))}
+    {
+      introductions.map((intro) => (
+        <IntroductionCard
+          client:load
+          type={intro.type}
+          name={intro.name}
+          description={intro.description}
+          images={intro.images}
+        />
+      ))
+    }
   </div>
 </section>

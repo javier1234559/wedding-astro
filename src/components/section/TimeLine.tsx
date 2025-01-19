@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { Users, Church, UtensilsCrossed } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -61,7 +60,6 @@ function TimeLine() {
           trigger: sectionRef.current,
           start: "top center", 
           toggleActions: "play none none none", 
-          markers: true, 
         }
       });
 

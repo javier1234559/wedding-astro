@@ -1,13 +1,40 @@
-<section class="bg-primary text-white py-16 min-h-[40vh] px-2 flex justify-center items-center">
+<section class="wedding-section">
   <div class="container mx-auto text-center">
-    <h1 id="wedding-title" class="text-5xl font-bold opacity-0">
-      Lễ Cưới của Anh Tuấn & Thu Hương
-    </h1>
-    <p id="wedding-subtitle" class="mt-4 text-lg opacity-0">
-      Hân hạnh mời bạn tham dự lễ cưới của chúng tôi
-    </p>
+    <h1 id="wedding-title" class="text-5xl font-bold opacity-0">Lễ Cưới của Anh Tuấn & Thu Hương</h1>
+    <p id="wedding-subtitle" class="mt-4 text-lg opacity-0">Hân hạnh mời bạn tham dự lễ cưới của chúng tôi</p>
   </div>
 </section>
+
+<style>
+  .wedding-section {
+    background-image: url('/image4.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+    padding: 4rem 0.5rem; /* py-16 px-2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* text-white */
+    position: relative;
+  }
+
+  .wedding-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+</style>
 
 <script >
   import { gsap } from "gsap";

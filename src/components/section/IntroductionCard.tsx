@@ -80,7 +80,7 @@ const IntroductionCard: React.FC<IntroductionCardProps> = ({ type, name, descrip
           >
             <img
               src={src}
-              alt={`${type} Image ${index + 1}`}
+              alt={`${type} ${index + 1}`}
               className="w-full h-auto object-cover shadow-lg"
             />
           </div>
